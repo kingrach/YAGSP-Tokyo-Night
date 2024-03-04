@@ -369,7 +369,7 @@ function greetingWeather() {
                             break;
                       }
 
-                      document.getElementById("greeting").innerHTML = `<span style="float:left;">${greetingText} <span style="float:right;"><i class="wi ${weatherIcon}"></i> ${temp}°C</span></span>`;
+                      document.getElementById("greeting").innerHTML = `<span style="float:left;">${greetingText}</span> <span style="float:right;"><i class="wi ${weatherIcon}"></i> ${temp}°C</span>`;
                   })
                   .catch(error => console.error("Error fetching weather data:", error));
           },
