@@ -176,73 +176,39 @@ function getWeather() {
       // 01d - Clear Day
       if(owIcon == "01d") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-sun"></i> <span>${data.main.temp}°</span>`
-      }
-      // 01n - Clear Night
-      if(owIcon == "01n") {
+      } else if(owIcon == "01n") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-moon"></i> <span>${data.main.temp}°</span>`
-      }
-      // 02d - Few Clouds Day
-      if(owIcon == "02d") {
+      } else if(owIcon == "02d") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-sun"></i> <span>${data.main.temp}°</span>`
-      }
-      // 02n - Few Clouds Night
-      if(owIcon == "02n") {
+      } else if(owIcon == "02n") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-moon"></i> <span>${data.main.temp}°</span>`
-      }
-      // 03d - Scattered Clouds Day
-      if(owIcon == "03d") {
+      } else if(owIcon == "03d") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-sun"></i> <span>${data.main.temp}°</span>`
-      }
-      // 03n - Scattered Clouds Night
-      if(owIcon == "03n") {
+      } else if(owIcon == "03n") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-moon"></i> <span>${data.main.temp}°</span>`
-      }
-      // 04d - Broken Clouds Day
-      if(owIcon == "04d") {
+      } else if(owIcon == "04d") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud"></i> <span>${data.main.temp}°</span>`
-      }
-      // 04n - Broken Clouds Night
-      if(owIcon == "04n") {
+      } else if(owIcon == "04n") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud"></i> <span>${data.main.temp}°</span>`
-      }
-      // 09d - Shower Rain Day
-      if(owIcon == "09d") {
+      } else if(owIcon == "09d") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-sun-rain"></i> <span>${data.main.temp}°</span>`
-      }
-      // 09n - Shower Rain Night
-      if(owIcon == "09n") {
+      } else if(owIcon == "09n") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-moon-rain"></i> <span>${data.main.temp}°</span>`
-      }
-      // 10d - Rain Day
-      if(owIcon == "10d") {
+      } else if(owIcon == "10d") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-rain"></i> <span>${data.main.temp}°</span>`
-      }
-      // 10n - Rain Night
-      if(owIcon == "10n") {
+      } else if(owIcon == "10n") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-rain"></i> <span>${data.main.temp}°</span>`
-      }
-      // 11d - Thunderstorm Day
-      if(owIcon == "11d") {
+      } else if(owIcon == "11d") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-bolt"></i> <span>${data.main.temp}°</span>`
-      }
-      // 11n - Thunderstorm Night
-      if(owIcon == "11n") {
+      } else if(owIcon == "11n") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-bolt"></i> <span>${data.main.temp}°</span>`
-      }
-      // 13d - Snow Day
-      if(owIcon == "13d") {
+      } else if(owIcon == "13d") {
           document.getElementById("weather").innerHTML = `<i class="fa-regular fa-snowflake"></i> <span>${data.main.temp}°</span>`
-      }
-      // 13n - Snow Night
-      if(owIcon == "13n") {
+      } else if(owIcon == "13n") {
           document.getElementById("weather").innerHTML = `<i class="fa-regular fa-snowflake"></i> <span>${data.main.temp}°</span>`
-      }
-      // 50d - Mist Day
-      if(owIcon == "50d") {
+      } else if(owIcon == "50d") {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-smog"></i> <span>${data.main.temp}°</span>`
-      }
-      //50n - Mist Night
-      if(owIcon == "50n") {
+      } else {
           document.getElementById("weather").innerHTML = `<i class="fa-solid fa-smog"></i> <span>${data.main.temp}°</span>`
       }
   })
