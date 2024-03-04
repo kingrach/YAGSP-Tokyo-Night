@@ -9,7 +9,7 @@
 var currentHour = new Date().getHours();
 
 // Function to determine greeting based on the hour
-function greeting(hour) {
+/* function greeting(hour) {
   var greetingText;
   if (hour >=5 && hour <= 11) {
     greetingText = "Good morning";
@@ -24,7 +24,7 @@ function greeting(hour) {
 }
 
 // Set the greeting text in the HTML element with id "greeting"
-document.getElementById("greeting").innerHTML = greeting(currentHour);
+document.getElementById("greeting").innerHTML = greeting(currentHour); */
 
 /**
  * Random Images
