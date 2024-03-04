@@ -255,7 +255,7 @@ function displayWeather() {
                     break;
             }
 
-            document.getElementById("weather").innerHTML = `<i class="wi ${weatherIcon}"></i> <span>${temp}°C</span>`;
+            document.getElementById("weather").innerHTML = "<i class='wi " + weatherIcon + "</i> <span>" + temp + "°C</span>";
         })
         .catch(error => console.log(error));
   }
