@@ -145,123 +145,120 @@ injectBookmarks()
  * Weather
  */
 
-/** function getWeather() {
+function displayWeather() {
   // Get location
   if ("geolocation" in navigator) {
       // Request location
       navigator.geolocation.getCurrentPosition(
           function (position) {
-              // Extract lat and lon from position
+              // Extract lat and lon
               var lat = position.coords.latitude;
               var lon = position.coords.longitude;
+              
+              // Call fetchWeather inside getCurrentPosition to ensure lat and lon are available
+              fetchWeather(lat, lon);
           },
           function (error) {
               console.error("Error getting location: ", error.message);
           }
-      )
+      );
   } else {
       console.error("Geolocation is not available in this browser.");
   }
+}
+
+function fetchWeather(lat, lon) {
   var apiKey = "518139f7a0c9b125beed32a90e71ad39";
-  var city = "Mountain Ash";
   var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
   fetch(url)
-  .then(response => response.json())
-  .then(data => {
-      // Get weather data
-      const temp = data.main.temp;
-      const owIcon = data.weather.icon;
-      const currentHour = new Date().getHours();
-      // 01d - Clear Day
-      if(owIcon == "01d") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-sun"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "01n") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-moon"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "02d") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-sun"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "02n") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-moon"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "03d") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-sun"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "03n") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-moon"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "04d") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "04n") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "09d") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-sun-rain"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "09n") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-moon-rain"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "10d") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-rain"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "10n") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-rain"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "11d") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-bolt"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "11n") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-bolt"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "13d") {
-          document.getElementById("weather").innerHTML = `<i class="fa-regular fa-snowflake"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "13n") {
-          document.getElementById("weather").innerHTML = `<i class="fa-regular fa-snowflake"></i> <span>${data.main.temp}°</span>`
-      } else if(owIcon == "50d") {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-smog"></i> <span>${data.main.temp}°</span>`
-      } else {
-          document.getElementById("weather").innerHTML = `<i class="fa-solid fa-smog"></i> <span>${data.main.temp}°</span>`
-      }
-  })
-  .catch(error => console.log(error));
+      .then(response => response.json())
+      .then(weather => {
+          // Get weather data
+          const temp = weather.main.temp;
+          const iconCode = weather.weather[0].icon;
+          let weatherIcon = "";
+
+          // Convert Icon Code to Weather Icon
+          switch(iconCode) {
+              // Clear Day
+              case "01d":
+                  weatherIcon = "wi-day-sunny";
+                  break;
+              // Clear Night
+              case "01n":
+                  weatherIcon = "wi-night-clear";
+                  break;
+              // Few Clouds Day
+              case "02d":
+                  weatherIcon = "wi-day-cloudy";
+                  break;
+              // Few Clouds Night
+              case "02n":
+                  weatherIcon = "wi-night-alt-cloudy";
+                  break;
+              // Scattered Clouds Day
+              case "03d":
+                  weatherIcon = "wi-day-cloudy-high";
+                  break;
+              // Scattered Clouds Night
+              case "03n":
+                  weatherIcon = "wi-night-alt-cloudy-high";
+                  break;
+              // Broken Clouds Day
+              case "04d":
+                  weatherIcon = "wi-cloudy";
+                  break;
+              // Broken Clouds Night
+              case "04n":
+                  weatherIcon = "wi-cloudy";
+                  break;
+              // Shower Rain Day
+              case "09d":
+                  weatherIcon = "wi-day-showers";
+                  break;
+              // Shower Rain Night
+              case "09n":
+                  weatherIcon = "wi-night-alt-showers";
+                  break;
+              // Rain Day
+              case "10d":
+                  weatherIcon = "wi-day-rain";
+                  break;
+              // Rain Night
+              case "10n":
+                  weatherIcon = "wi-night-alt-rain";
+                  break;
+              // Thunderstorm Day
+              case "11d":
+                  weatherIcon = "wi-day-thunderstorm";
+                  break;
+              // Thunderstorm Night
+              case "11n":
+                  weatherIcon = "wi-night-alt-thunderstorm";
+                  break;
+              // Snow Day
+              case "13d":
+                  weatherIcon = "wi-day-snow";
+                  break;
+              // Snow Night
+              case "13n":
+                  weatherIcon = "wi-night-alt-snow";
+                  break;
+              // Mist Day
+              case "50d":
+                  weatherIcon = "wi-day-fog";
+                  break;
+              // Mist Night
+              case "50n":
+                  weatherIcon = "wi-night-fog";
+                  break;
+          }
+
+          document.getElementById("weather").innerHTML = `<i class ="${weatherIcon}"></i> <span>${temp}°C</span>`;
+      })
+      .catch(error => console.log(error));
 }
 
-// Call getWeather initially
-getWeather();
-
-// Call getWeather function every 1 second
-setInterval(getWeather, 1000); */
-
-const { weatherAPI } = "518139f7a0c9b125beed32a90e71ad39";
-
-
-// Initial API call
-const getWeather = async () => {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=33.8938&lon=35.5018&appid=${weatherAPI}&units=metric`)
-    const weather = await res.json()
-    return weather
-}
-
-//regex to return the first number from the API's weather condition ID
-const conditionChecker = async() => {
-    const weather = await getWeather()
-    const re = new RegExp(/\d/)
-    const weatherCondition = weather.weather[0].id.toString()
-    const firstInt = weatherCondition.match(re).toString()
-    return firstInt
-}
-
-
-//Displays a different FontAwesome Icon on night/day rain/shine
-const displayWeather = async () => {
-    weather = await getWeather()
-    weatherCondition = await conditionChecker()
-    const date = new Date
-    hours = date.getHours()
-    if(hours >= 18 || hours <= 6){
-        document.getElementsByClassName("weather")[0].innerHTML = `<i class="fa-solid fa-moon"></i> <span>${weather.main.temp}°</span>`
-
-        if(weatherCondition == 2 || weatherCondition == 3 || weatherCondition == 5) {
-            document.getElementsByClassName("weather")[0].innerHTML = `<i class="fa-solid fa-cloud-moon-rain"></i> <span>${weather.main.temp}°</span>`
-        }
-
-    } 
-    
-    else {
-        document.getElementsByClassName("weather")[0].innerHTML = `<i class="fa-solid fa-sun"></i> <span>${weather.main.temp}°</span>`
-        if(weatherCondition === 2 || weatherCondition === 3 || weatherCondition === 5) {
-            document.getElementsByClassName("weather")[0].innerHTML = `<i class="fa-solid fa-cloud-sun-rain"></i> <span>${weather.main.temp}°</span>`
-        }
-    }
-}
-
-displayWeather()
+// Initial call
+displayWeather();
