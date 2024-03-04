@@ -174,7 +174,8 @@ function displayWeather() {
         .then(response => response.json())
         .then(weather => {
             // Get weather data
-            const temp = Math.round(weather.main.temp);
+            const temp0 = weather.main.temp;
+            const temp = Math.round(temp0);
             const iconCode = weather.weather[0].icon;
             let weatherIcon = "";
 
