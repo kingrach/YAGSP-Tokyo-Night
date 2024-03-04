@@ -52,7 +52,7 @@ function getImg() {
  * Search function
  */
 
-const searchInput = document.querySelector("#searchbar > input")
+/** const searchInput = document.querySelector("#searchbar > input")
 const searchButton = document.querySelector("#searchbar > button")
 
 const lookup = {"/":"/","deepl":"https://deepl.com/","reddit":"https://reddit.com/","maps":"https://maps.google.com/"}
@@ -89,7 +89,7 @@ const search = () => {
 }
 
 searchInput.onkeyup = event => event.key === "Enter" && search()
-searchButton.onclick = search
+searchButton.onclick = search */
 
 /**
  * inject bookmarks into html
