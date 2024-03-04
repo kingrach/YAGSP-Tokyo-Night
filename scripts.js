@@ -16,7 +16,7 @@ function greetingWeather() {
     greetingText = "Good afternoon, Rachel.";
   } else if (hour >= 18 && hour <= 21) {      // 18:00 to 21:00
     greetingText = "Good evening, Rachel.";
-  } else if (hour >= 22 && hour <= 4) {       // 22:00 to 04:00
+  } else if (hour >= 22 || hour <= 4) {       // 22:00 to 04:00
     greetingText = "Good night, Rachel.";
   } else {
     greetingText = "Hello, Rachel.";
