@@ -292,7 +292,7 @@ function greetingWeather() {
                   .then(weather => {
                       const temp = Math.round(weather.main.temp);
                       const iconCode = weather.weather[0].icon;
-                      let weatherIcon = "";
+                      let weatherIcon;
 
                       switch (iconCode) {
                           // Handle weather icon codes
