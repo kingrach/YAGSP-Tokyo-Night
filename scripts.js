@@ -6,7 +6,7 @@
  */
 
 // Get current hour
-var currentHour = new Date().getHours();
+// var currentHour = new Date().getHours();
 
 // Function to determine greeting based on the hour
 /* function greeting(hour) {
@@ -265,49 +265,40 @@ injectBookmarks()
 displayWeather(); */
 
 function greetingWeather() {
-  var currentHour = new Date().getHours();
-  // Determine greeting based on time of day
   let greetingText;
-  if (hour >= 5 && hour <= 11) {      // 05:00 to 11:00
-      greetingText = "Good morning, Rachel.";
-  } else if (hour >= 12 && hour <= 17) {      // 12:00 to 17:00
-      greetingText = "Good afternoon, Rachel.";
-  } else if (hour >= 18 && hour <= 21) {      // 18:00 to 21:00
-      greetingText = "Good evening, Rachel.";
-  } else if (hour >= 22 && hour <= 4) {       // 22:00 to 04:00
-      greetingText = "Good night, Rachel.";
+  if (hour >= 5 && hour <= 11) {
+      greetingText = "good morning";
+  } else if (hour >= 12 && hour <= 16) {
+      greetingText = "good afternoon";
+  } else if ((hour >= 17 && hour <= 23) || (hour >= 0 && hour <= 4)) {
+      greetingText = "good evening";
   } else {
-      greetingText = "Hello, Rachel.";
+      greetingText = "hello";
   }
-  return greetingText;
 
-  function getWeather() {
-      // Request user's location
-      if ("geolocation" in navigator) {
-          navigator.geolocation.getCurrentPosition(
-              function (position) {
-                  var lat = position.coords.latitude;
-                  var lon = position.coords.longitude;
-              },
-              function (error) {
-                  console.error("Error getting location: ", error.message);
-              }
-          )
-      } else {
-          console.error("Geolocation not available in this browser.");
-      }
-      var apiKey = "518139f7a0c9b125beed32a90e71ad39";
-      var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  
-      fetch(url)
+  if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+          function (position) {
+              var lat = position.coords.latitude;
+              var lon = position.coords.longitude;
+          },
+          function (error) {
+              console.error("Error getting location:", error.message);
+          }
+      )
+  } else {
+      console.error("Geolocation is not available in this browser.");
+  }
+  var apiKey = "518139f7a0c9b125beed32a90e71ad39";
+  var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+  fetch(url)
       .then(response => response.json())
       .then(weather => {
           const temp0 = weather.main.temp;
           const temp = Math.round(temp0);
           const iconCode = weather.weather[0].icon;
-          let weatherIcon;
-  
-          // Convert Icon Code to Weather Icon
+          let weatherIcon = "";
           switch(iconCode) {
               // Clear Day
               case "01d":
@@ -382,11 +373,9 @@ function greetingWeather() {
                   weatherIcon = "wi-night-fog";
                   break;
           }
-          document.getElementById("greeting").innerHTML = `<span style="float:left">${greetingText}<span style="float:right"><i class = "wi ${weatherIcon}"></i> ${temp}°C</span></span>`
+          document.getElementById("greeting").innerHTML = `<span style="float:left;">${greetingText} <span style="float:right;"><i class="wi ${weatherIcon}"></i> ${temp}°C</span></span>`;
       })
       .catch(error => console.log(error));
-      getWeather();
-  }
 }
 
 greetingWeather();
