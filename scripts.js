@@ -269,14 +269,16 @@ function greetingWeather() {
   const date = new Date();
   const hour = date.getHours();
 
-  if (hour >= 5 && hour <= 11) {
-      greetingText = "good morning";
-  } else if (hour >= 12 && hour <= 16) {
-      greetingText = "good afternoon";
-  } else if ((hour >= 17 && hour <= 23) || (hour >= 0 && hour <= 4)) {
-      greetingText = "good evening";
+  if (hour >= 5 && hour <= 11) {      // 05:00 to 11:00
+    greetingText = "Good morning, Rachel.";
+  } else if (hour >= 12 && hour <= 17) {      // 12:00 to 17:00
+    greetingText = "Good afternoon, Rachel.";
+  } else if (hour >= 18 && hour <= 21) {      // 18:00 to 21:00
+    greetingText = "Good evening, Rachel.";
+  } else if (hour >= 22 && hour <= 4) {       // 22:00 to 04:00
+    greetingText = "Good night, Rachel.";
   } else {
-      greetingText = "hello";
+    greetingText = "Hello, Rachel.";
   }
 
   if ("geolocation" in navigator) {
