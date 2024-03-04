@@ -183,79 +183,79 @@ function displayWeather() {
             switch(iconCode) {
                 // Clear Day
                 case "01d":
-                    weatherIcon = "wi-day-sunny";
+                    weatherIcon = '<i class="wi-day-sunny"></i>';
                     break;
                 // Clear Night
                 case "01n":
-                    weatherIcon = "wi-night-clear";
+                    weatherIcon = '<i class="wi-night-clear"></i>';
                     break;
                 // Few Clouds Day
                 case "02d":
-                    weatherIcon = "wi-day-cloudy";
+                    weatherIcon = '<i class="wi-day-cloudy"></i>';
                     break;
                 // Few Clouds Night
                 case "02n":
-                    weatherIcon = "wi-night-alt-cloudy";
+                    weatherIcon = '<i class="wi-night-alt-cloudy"></i>';
                     break;
                 // Scattered Clouds Day
                 case "03d":
-                    weatherIcon = "wi-day-cloudy-high";
+                    weatherIcon = '<i class="wi-day-cloudy-high"></i>';
                     break;
                 // Scattered Clouds Night
                 case "03n":
-                    weatherIcon = "wi-night-alt-cloudy-high";
+                    weatherIcon = '<i class="wi-night-alt-cloudy-high"></i>';
                     break;
                 // Broken Clouds Day
                 case "04d":
-                    weatherIcon = "wi-cloudy";
+                    weatherIcon = '<i class="wi-cloudy"></i>';
                     break;
                 // Broken Clouds Night
                 case "04n":
-                    weatherIcon = "wi-cloudy";
+                    weatherIcon = '<i class="wi-cloudy"></i>';
                     break;
                 // Shower Rain Day
                 case "09d":
-                    weatherIcon = "wi-day-showers";
+                    weatherIcon = '<i class="wi-day-showers"></i>';
                     break;
                 // Shower Rain Night
                 case "09n":
-                    weatherIcon = "wi-night-alt-showers";
+                    weatherIcon = '<i class="wi-night-alt-showers"></i>';
                     break;
                 // Rain Day
                 case "10d":
-                    weatherIcon = "wi-day-rain";
+                    weatherIcon = '<i class="wi-day-rain"></i>';
                     break;
                 // Rain Night
                 case "10n":
-                    weatherIcon = "wi-night-alt-rain";
+                    weatherIcon = '<i class="wi-night-alt-rain"></i>';
                     break;
                 // Thunderstorm Day
                 case "11d":
-                    weatherIcon = "wi-day-thunderstorm";
+                    weatherIcon = '<i class="wi-day-thunderstorm"></i>';
                     break;
                 // Thunderstorm Night
                 case "11n":
-                    weatherIcon = "wi-night-alt-thunderstorm";
+                    weatherIcon = '<i class="wi-night-alt-thunderstorm"></i>';
                     break;
                 // Snow Day
                 case "13d":
-                    weatherIcon = "wi-day-snow";
+                    weatherIcon = '<i class="wi-day-snow"></i>';
                     break;
                 // Snow Night
                 case "13n":
-                    weatherIcon = "wi-night-alt-snow";
+                    weatherIcon = '<i class="wi-night-alt-snow"></i>';
                     break;
                 // Mist Day
                 case "50d":
-                    weatherIcon = "wi-day-fog";
+                    weatherIcon = '<i class="wi-day-fog"></i>';
                     break;
                 // Mist Night
                 case "50n":
-                    weatherIcon = "wi-night-fog";
+                    weatherIcon = '<i class="wi-night-fog"></i>';
                     break;
             }
 
-            document.getElementById("weather").innerHTML = `<i class ="${weatherIcon}"></i> <span>${temp}°C</span>`;
+            document.getElementById("weather").innerHTML = `${weatherIcon} <span>${temp}°C</span>`;
         })
         .catch(error => console.log(error));
   }
