@@ -266,6 +266,9 @@ displayWeather(); */
 
 function greetingWeather() {
   let greetingText;
+  const date = new Date();
+  const hour = date.getHours();
+
   if (hour >= 5 && hour <= 11) {
       greetingText = "good morning";
   } else if (hour >= 12 && hour <= 16) {
@@ -279,103 +282,104 @@ function greetingWeather() {
   if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
           function (position) {
-              var lat = position.coords.latitude;
-              var lon = position.coords.longitude;
+              const lat = position.coords.latitude;
+              const lon = position.coords.longitude;
+              const apiKey = "518139f7a0c9b125beed32a90e71ad39";
+              const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+              fetch(url)
+                  .then(response => response.json())
+                  .then(weather => {
+                      const temp = Math.round(weather.main.temp);
+                      const iconCode = weather.weather[0].icon;
+                      let weatherIcon = "";
+
+                      switch (iconCode) {
+                          // Handle weather icon codes
+                          case "01d":
+                            weatherIcon = "wi-day-sunny";
+                            break;
+                          // Clear Night
+                          case "01n":
+                            weatherIcon = "wi-night-clear";
+                            break;
+                          // Few Clouds Day
+                          case "02d":
+                            weatherIcon = "wi-day-cloudy";
+                            break;
+                          // Few Clouds Night
+                          case "02n":
+                            weatherIcon = "wi-night-alt-cloudy";
+                            break;
+                          // Scattered Clouds Day
+                          case "03d":
+                            weatherIcon = "wi-day-cloudy-high";
+                            break;
+                          // Scattered Clouds Night
+                          case "03n":
+                            weatherIcon = "wi-night-alt-cloudy-high";
+                            break;
+                          // Broken Clouds Day
+                          case "04d":
+                            weatherIcon = "wi-cloudy";
+                            break;
+                          // Broken Clouds Night
+                          case "04n":
+                            weatherIcon = "wi-cloudy";
+                            break;
+                          // Shower Rain Day
+                          case "09d":
+                            weatherIcon = "wi-day-showers";
+                            break;
+                          // Shower Rain Night
+                          case "09n":
+                            weatherIcon = "wi-night-alt-showers";
+                            break;
+                          // Rain Day
+                          case "10d":
+                            weatherIcon = "wi-day-rain";
+                            break;
+                          // Rain Night
+                          case "10n":
+                            weatherIcon = "wi-night-alt-rain";
+                            break;
+                          // Thunderstorm Day
+                          case "11d":
+                            weatherIcon = "wi-day-thunderstorm";
+                            break;
+                          // Thunderstorm Night
+                          case "11n":
+                            weatherIcon = "wi-night-alt-thunderstorm";
+                            break;
+                          // Snow Day
+                          case "13d":
+                            weatherIcon = "wi-day-snow";
+                            break;
+                          // Snow Night
+                          case "13n":
+                            weatherIcon = "wi-night-alt-snow";
+                            break;
+                          // Mist Day
+                          case "50d":
+                            weatherIcon = "wi-day-fog";
+                            break;
+                          // Mist Night
+                          case "50n":
+                            weatherIcon = "wi-night-fog";
+                            break;
+                      }
+
+                      document.getElementById("greeting").innerHTML = `<span style="float:left;">${greetingText} <span style="float:right;"><i class="wi ${weatherIcon}"></i> ${temp}°C</span></span>`;
+                  })
+                  .catch(error => console.error("Error fetching weather data:", error));
           },
           function (error) {
               console.error("Error getting location:", error.message);
           }
-      )
+      );
   } else {
       console.error("Geolocation is not available in this browser.");
   }
-  var apiKey = "518139f7a0c9b125beed32a90e71ad39";
-  var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-
-  fetch(url)
-      .then(response => response.json())
-      .then(weather => {
-          const temp0 = weather.main.temp;
-          const temp = Math.round(temp0);
-          const iconCode = weather.weather[0].icon;
-          let weatherIcon = "";
-          switch(iconCode) {
-              // Clear Day
-              case "01d":
-                  weatherIcon = "wi-day-sunny";
-                  break;
-              // Clear Night
-              case "01n":
-                  weatherIcon = "wi-night-clear";
-                  break;
-              // Few Clouds Day
-              case "02d":
-                  weatherIcon = "wi-day-cloudy";
-                  break;
-              // Few Clouds Night
-              case "02n":
-                  weatherIcon = "wi-night-alt-cloudy";
-                  break;
-              // Scattered Clouds Day
-              case "03d":
-                  weatherIcon = "wi-day-cloudy-high";
-                  break;
-              // Scattered Clouds Night
-              case "03n":
-                  weatherIcon = "wi-night-alt-cloudy-high";
-                  break;
-              // Broken Clouds Day
-              case "04d":
-                  weatherIcon = "wi-cloudy";
-                  break;
-              // Broken Clouds Night
-              case "04n":
-                  weatherIcon = "wi-cloudy";
-                  break;
-              // Shower Rain Day
-              case "09d":
-                  weatherIcon = "wi-day-showers";
-                  break;
-              // Shower Rain Night
-              case "09n":
-                  weatherIcon = "wi-night-alt-showers";
-                  break;
-              // Rain Day
-              case "10d":
-                  weatherIcon = "wi-day-rain";
-                  break;
-              // Rain Night
-              case "10n":
-                  weatherIcon = "wi-night-alt-rain";
-                  break;
-              // Thunderstorm Day
-              case "11d":
-                  weatherIcon = "wi-day-thunderstorm";
-                  break;
-              // Thunderstorm Night
-              case "11n":
-                  weatherIcon = "wi-night-alt-thunderstorm";
-                  break;
-              // Snow Day
-              case "13d":
-                  weatherIcon = "wi-day-snow";
-                  break;
-              // Snow Night
-              case "13n":
-                  weatherIcon = "wi-night-alt-snow";
-                  break;
-              // Mist Day
-              case "50d":
-                  weatherIcon = "wi-day-fog";
-                  break;
-              // Mist Night
-              case "50n":
-                  weatherIcon = "wi-night-fog";
-                  break;
-          }
-          document.getElementById("greeting").innerHTML = `<span style="float:left;">${greetingText} <span style="float:right;"><i class="wi ${weatherIcon}"></i> ${temp}°C</span></span>`;
-      })
-      .catch(error => console.log(error));
 }
 
 greetingWeather();
