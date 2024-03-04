@@ -183,75 +183,75 @@ function displayWeather() {
             switch(iconCode) {
                 // Clear Day
                 case "01d":
-                    weatherIcon = '<i class="wi-day-sunny"></i>';
+                    weatherIcon = '<i class="wi wi-day-sunny"></i>';
                     break;
                 // Clear Night
                 case "01n":
-                    weatherIcon = '<i class="wi-night-clear"></i>';
+                    weatherIcon = '<i class="wi wi-night-clear"></i>';
                     break;
                 // Few Clouds Day
                 case "02d":
-                    weatherIcon = '<i class="wi-day-cloudy"></i>';
+                    weatherIcon = '<i class="wi wi-day-cloudy"></i>';
                     break;
                 // Few Clouds Night
                 case "02n":
-                    weatherIcon = '<i class="wi-night-alt-cloudy"></i>';
+                    weatherIcon = '<i class="wi wi-night-alt-cloudy"></i>';
                     break;
                 // Scattered Clouds Day
                 case "03d":
-                    weatherIcon = '<i class="wi-day-cloudy-high"></i>';
+                    weatherIcon = '<i class="wi wi-day-cloudy-high"></i>';
                     break;
                 // Scattered Clouds Night
                 case "03n":
-                    weatherIcon = '<i class="wi-night-alt-cloudy-high"></i>';
+                    weatherIcon = '<i class="wi wi-night-alt-cloudy-high"></i>';
                     break;
                 // Broken Clouds Day
                 case "04d":
-                    weatherIcon = '<i class="wi-cloudy"></i>';
+                    weatherIcon = '<i class="wi wi-cloudy"></i>';
                     break;
                 // Broken Clouds Night
                 case "04n":
-                    weatherIcon = '<i class="wi-cloudy"></i>';
+                    weatherIcon = '<i class="wi wi-cloudy"></i>';
                     break;
                 // Shower Rain Day
                 case "09d":
-                    weatherIcon = '<i class="wi-day-showers"></i>';
+                    weatherIcon = '<i class="wi wi-day-showers"></i>';
                     break;
                 // Shower Rain Night
                 case "09n":
-                    weatherIcon = '<i class="wi-night-alt-showers"></i>';
+                    weatherIcon = '<i class="wi wi-night-alt-showers"></i>';
                     break;
                 // Rain Day
                 case "10d":
-                    weatherIcon = '<i class="wi-day-rain"></i>';
+                    weatherIcon = '<i class="wi wi-day-rain"></i>';
                     break;
                 // Rain Night
                 case "10n":
-                    weatherIcon = '<i class="wi-night-alt-rain"></i>';
+                    weatherIcon = '<i class="wi wi-night-alt-rain"></i>';
                     break;
                 // Thunderstorm Day
                 case "11d":
-                    weatherIcon = '<i class="wi-day-thunderstorm"></i>';
+                    weatherIcon = '<i class="wi wi-day-thunderstorm"></i>';
                     break;
                 // Thunderstorm Night
                 case "11n":
-                    weatherIcon = '<i class="wi-night-alt-thunderstorm"></i>';
+                    weatherIcon = '<i class="wi wi-night-alt-thunderstorm"></i>';
                     break;
                 // Snow Day
                 case "13d":
-                    weatherIcon = '<i class="wi-day-snow"></i>';
+                    weatherIcon = '<i class="wi wi-day-snow"></i>';
                     break;
                 // Snow Night
                 case "13n":
-                    weatherIcon = '<i class="wi-night-alt-snow"></i>';
+                    weatherIcon = '<i class="wi wi-night-alt-snow"></i>';
                     break;
                 // Mist Day
                 case "50d":
-                    weatherIcon = '<i class="wi-day-fog"></i>';
+                    weatherIcon = '<i class="wi wi-day-fog"></i>';
                     break;
                 // Mist Night
                 case "50n":
-                    weatherIcon = '<i class="wi-night-fog"></i>';
+                    weatherIcon = '<i class="wi wi-night-fog"></i>';
                     break;
             }
 
