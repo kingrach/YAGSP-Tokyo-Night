@@ -248,18 +248,18 @@ const displayWeather = async () => {
     const date = new Date
     hours = date.getHours()
     if(hours >= 18 || hours <= 6){
-        document.getElementsByIdName("weather")[0].innerHTML = `<i class="fa-solid fa-moon"></i> <span>${weather.main.temp}°</span>`
+        document.getElementsByClassName("weather")[0].innerHTML = `<i class="fa-solid fa-moon"></i> <span>${weather.main.temp}°</span>`
 
         if(weatherCondition == 2 || weatherCondition == 3 || weatherCondition == 5) {
-            document.getElementsByIdName("weather")[0].innerHTML = `<i class="fa-solid fa-cloud-moon-rain"></i> <span>${weather.main.temp}°</span>`
+            document.getElementsByClassName("weather")[0].innerHTML = `<i class="fa-solid fa-cloud-moon-rain"></i> <span>${weather.main.temp}°</span>`
         }
 
     } 
     
     else {
-        document.getElementsByIdName("weather")[0].innerHTML = `<i class="fa-solid fa-sun"></i> <span>${weather.main.temp}°</span>`
+        document.getElementsByClassName("weather")[0].innerHTML = `<i class="fa-solid fa-sun"></i> <span>${weather.main.temp}°</span>`
         if(weatherCondition === 2 || weatherCondition === 3 || weatherCondition === 5) {
-            document.getElementsByIdName("weather")[0].innerHTML = `<i class="fa-solid fa-cloud-sun-rain"></i> <span>${weather.main.temp}°</span>`
+            document.getElementsByClassName("weather")[0].innerHTML = `<i class="fa-solid fa-cloud-sun-rain"></i> <span>${weather.main.temp}°</span>`
         }
     }
 }
