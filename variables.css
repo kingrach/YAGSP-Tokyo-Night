@@ -10,7 +10,7 @@
   --color-fg-surface: #D6DCE8;
   --color-fg-highlight: #FFFFFF;
   --color-primary-bg: #2C4948;
-  --color-primary-base: #c0caf5;
+  --color-primary-base: #b4f9f8;
   --color-primary-fg: #bb9af7;
   --color-secondary-bg: #25394C;
   --color-secondary-base: #4A7197;
@@ -31,7 +31,7 @@
 
   /** surface */
   --surface-maxWidth: 1000px;
-  --surface-shadow: 12px 12px 0px rgba(169, 177, 214, 0.3), 24px 24px 0px rgba(154, 165, 206, 0.3), 36px 36px 0px rgba(86, 95, 137, 0.3), 48px 48px 0px rgba(65, 72, 104, 0.3), 60px 60px 0px rgba(36, 40, 59);
+  --surface-shadow: 12px 12px 0px rgba(180, 249, 248, 0.3), 24px 24px 0px rgba(125, 207, 255, 0.3), 36px 36px 0px rgba(42, 195, 222, 0.3), 48px 48px 0px rgba(122, 162, 247, 0.3), 60px 60px 0px rgba(187, 154, 247, 0.15);
   --surface-borderRadius: 0px;
 
   /** spacing */
