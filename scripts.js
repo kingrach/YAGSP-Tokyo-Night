@@ -1,6 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
+// Set theme
+const setTheme = theme => document.documentElement.className = theme;
+
 /**
  * Greeting and Weather
  */

@@ -132,14 +132,17 @@ greetingWeather();
  */
 
 var images = [
-  "https://kingrach.github.io/YAGSP-Tokyo-Night/img/01.gif",
-  "https://kingrach.github.io/YAGSP-Tokyo-Night/img/02.gif",
-  "https://kingrach.github.io/YAGSP-Tokyo-Night/img/03.gif",
-  "https://kingrach.github.io/YAGSP-Tokyo-Night/img/04.gif",
-  "https://kingrach.github.io/YAGSP-Tokyo-Night/img/05.gif",
-  "https://kingrach.github.io/YAGSP-Tokyo-Night/img/06.gif",
-  "https://kingrach.github.io/YAGSP-Tokyo-Night/img/07.gif",
-  "https://kingrach.github.io/YAGSP-Tokyo-Night/img/08.gif"
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/01.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/02.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/03.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/04.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/05.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/06.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/07.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/08.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/09.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/10.gif",
+  "https://kingrach.github.io/YAGSP-Tokyo-Night/gruvbox-dark/img/11.jpg"
 ];
 function getImg() {
   var img = '<img src=\"';
