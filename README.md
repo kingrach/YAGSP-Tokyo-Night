@@ -4,3 +4,4 @@
 * Weather Icons: [erikflowers](https://erikflowers.github.io/weather-icons/)
 * Favicon: [ghostdere.tumblr.com](https://ghostdere.tumblr.com/post/91981219168/tiny-pixels-favicons-more-masterpost)
 * Colour scheme: [enkia](https://github.com/enkia/tokyo-night-vscode-theme)
+* Images: [Waneella](https://www.waneella.com/) and [8PXL](https://8pxl.co/)
