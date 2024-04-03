@@ -203,7 +203,7 @@ const bookmarks = [{"id":"me","label":"<h2 style='color:var(--color-palette-red)
                   {"id":"shopping","label":"<h2 style='color:var(--color-palette-yellow);font-size: calc(var(--font-size) * var(--space-medium));font-weight: 500;margin: 0;'>shopping</h2>","bookmarks":
                   [{"id":"amazon","label":"amazon","url":"https://www.amazon.co.uk/"},{"id":"etsy","label":"etsy","url":"https://www.etsy.com/"},{"id":"aliexpress","label":"aliexpress","url":"https://www.aliexpress.com"},{"id":"vinted","label":"vinted","url":"https://www.vinted.co.uk"}]},
                   {"id":"other","label":"<h2 style='color:var(--color-palette-blue);font-size: calc(var(--font-size) * var(--space-medium));font-weight: 500;margin: 0;'>other</h2>","bookmarks":
-                  [{"id":"unicode","label":"unicode symbols","url":"https://www.vertex42.com/ExcelTips/unicode-symbols.html/"},{"id":"github","label":"github","url":"https://www.github.com/"},{"id":"sheet","label":"sleep sheet","url":"https://docs.google.com/spreadsheets/d/13t7j8dkb66OXElYwu5Ov9MUAYhFfTdKOYOQeMv1HDAQ/edit#gid=1973172189"},{"id":"wiki","label":"sleep wiki","url":"https://pks.raenonx.cc/en"}]}]
+                  [{"id":"unicode","label":"unicode symbols","url":"https://www.vertex42.com/ExcelTips/unicode-symbols.html/"},{"id":"github","label":"github","url":"https://www.github.com/"},{"id":"sheet","label":"sleep sheet","url":"https://docs.google.com/spreadsheets/d/1Gysci35hMZCvZX8POQYDqt2573uFpK_ZmWoFJLU8EG8/edit#gid=1035936464"},{"id":"wiki","label":"sleep wiki","url":"https://pks.raenonx.cc/en"}]}]
 
 const createGroupContainer = () => {
   const container = document.createElement("div")
